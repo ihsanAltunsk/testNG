@@ -10,13 +10,13 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
-private Driver(){
-    // It is anticipated that the 'getDriver()' and 'closeDriver()' methods in the Driver class in the POM
-    // will be used in a static manner.
-    // Using object creation is prevented for these methods
-    // or to prevent the use of the POM in different applications by creating objects,
-    // the Singleton Pattern has been preferred.
-}
+    private Driver() {
+        // It is anticipated that the 'getDriver()' and 'closeDriver()' methods in the Driver class in the POM
+        // will be used in a static manner.
+        // Using object creation is prevented for these methods
+        // or to prevent the use of the POM in different applications by creating objects,
+        // the Singleton Pattern has been preferred.
+    }
     /*
         Create 'getDriver()' that returns a WebDriver object to where it is called
 
@@ -30,21 +30,22 @@ private Driver(){
     */
 
     static WebDriver driver;
-    public static WebDriver getDriver(){
+
+    public static WebDriver getDriver() {
+
         String browser = ConfigReader.getProperty("browser");
-        if (driver == null){
 
-            switch (browser){
-
-                case "firefox" :
+        if (driver == null) {
+            switch (browser) {
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-                case "safari"   :
+                case "safari":
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
                     break;
-                case "edge" :
+                case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
@@ -52,15 +53,23 @@ private Driver(){
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
             }
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        }
         return driver;
     }
+
     public static void closeDriver(){
         driver.close();
+        if (driver != null){
+            driver = null;
+        }
     }
+
     public static void quitDriver(){
         driver.quit();
+        if (driver != null){
+            driver = null;
+        }
     }
 }
