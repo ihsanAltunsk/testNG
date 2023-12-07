@@ -1,6 +1,8 @@
 package tests.day15_configuration_Properties_Usage;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.WebuniversityPage;
 import utilities.Driver;
@@ -33,25 +35,32 @@ public class C01_WebuniversityTest {
         webuniversityPage.loginPortalLink.click();
 
         // 4- Switch to the new window
-
+        ReusableMethods.changePageWithTitle("Driver.getDriver().");
 
         // 5- Enter values into the "username" and "password" boxes
-
+        Faker faker = new Faker();
+        webuniversityPage.usernameBox.sendKeys(faker.name().username());
+        webuniversityPage.passwordBox.sendKeys(faker.internet().password());
 
         // 6- Click the "login" button
-
+        webuniversityPage.loginButton.click();
 
         // 7- Test that the text in the popup is "validation failed"
-
+        String expectedAlert = "validation failed";
+        String actualAlert = Driver.getDriver().switchTo().alert().getText();
+        Assert.assertEquals(actualAlert,expectedAlert);
 
         // 8- Close the popup by clicking "Ok"
-
+        Driver.getDriver().switchTo().alert().accept();
 
         // 9- Go back to the first page
-
+        String firstPageTitle = "WebDriverUniversity.com";
+        ReusableMethods.changePageWithTitle(firstPageTitle);
 
         // 10- Test that the return to the first page is successful
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(actualTitle,firstPageTitle);
 
-
+        Driver.quitDriver();
     }
 }

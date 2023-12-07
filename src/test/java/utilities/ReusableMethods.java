@@ -38,15 +38,14 @@ public class ReusableMethods {
         }
     }
 
-    public static WebDriver changePageWithTitle(WebDriver driver , String targetPageTitle){
-        Set<String> allWhdSet = driver.getWindowHandles();
+    public static void changePageWithTitle( String targetPageTitle){
+        Set<String> allWhdSet = Driver.getDriver().getWindowHandles();
         for (String each : allWhdSet) {
-            String eachTitle = driver.switchTo().window(each).getTitle();
+            String eachTitle = Driver.getDriver().switchTo().window(each).getTitle();
             if (eachTitle.equals(targetPageTitle)){
-                return driver;
+                break;
             }
         }
-        return driver;
     }
     public static String find2ndWhdWith1stWhd(WebDriver driver, String firstPageWhd) {
         Set<String > allWhdSet = driver.getWindowHandles();
