@@ -1,5 +1,6 @@
 package tests.day14_testNG;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class C02_DependsOnMethods {
@@ -23,6 +24,7 @@ public class C02_DependsOnMethods {
     }
     @Test
     public void testAutomationTest(){
+        Assert.assertTrue(false);
         System.out.println("Test Automation test PASSED.");
     }
     @Test
