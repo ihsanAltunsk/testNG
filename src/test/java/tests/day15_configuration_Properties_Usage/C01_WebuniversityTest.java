@@ -26,7 +26,7 @@ public class C01_WebuniversityTest {
         Driver.getDriver().get("http://webdriveruniversity.com/");
 
         // 2- Scroll down to "Login Portal"
-        WebuniversityPage webuniversityPage =new WebuniversityPage();
+        WebuniversityPage webuniversityPage = new WebuniversityPage();
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoViewIfNeeded(true);",webuniversityPage.loginPortalLink);
 
