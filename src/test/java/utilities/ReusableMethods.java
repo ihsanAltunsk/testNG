@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class ReusableMethods {
 
-    public static List<String> convertToString(List<WebElement> elementsList){
+    public static List<String> convertToStringList(List<WebElement> elementsList){
 
         List<String> stringList = new ArrayList<>();
 

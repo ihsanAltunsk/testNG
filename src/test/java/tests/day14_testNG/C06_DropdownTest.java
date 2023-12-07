@@ -1,9 +1,13 @@
 package tests.day14_testNG;
 
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TestOtomasyonuFormPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.List;
 
 public class C06_DropdownTest {
     // Go to the address https://testotomasyonu.com/form.
@@ -38,10 +42,10 @@ public class C06_DropdownTest {
                            selectYear.getFirstSelectedOption().getText());
 
         // 5. Print all values (value) in the month dropdown menu.
-        selectMonth.getOptions();
+        List<String> monthList = ReusableMethods.convertToStringList(selectMonth.getOptions());
+        System.out.println(monthList);
 
         // 6. Test that the size of the month dropdown menu is 13.
-
-
+        Assert.assertEquals(selectMonth.getOptions().size(),13);
     }
 }
