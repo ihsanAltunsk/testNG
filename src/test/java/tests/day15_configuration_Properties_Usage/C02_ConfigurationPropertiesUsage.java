@@ -17,7 +17,7 @@ public class C02_ConfigurationPropertiesUsage {
     @Test
     public void searchTest(){
         // 1- Go to the test automation homepage
-        Driver.getDriver().get(ConfigReader.getProperty("toURl"));
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
 
         // 2- Search for the product specified in the configuration.properties file
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
@@ -36,6 +36,8 @@ public class C02_ConfigurationPropertiesUsage {
         String actualProductName = testOtomasyonuPage.productNameAtProductPage.
                                    getText().toLowerCase();
         Assert.assertTrue(actualProductName.contains(ConfigReader.getProperty("toSearchWord")));
+
+        Driver.quitDriver();
 
     }
 }

@@ -24,4 +24,21 @@ public class TestOtomasyonuPage {
     @FindBy(xpath = "//div[@class=' heading-sm mb-4']")
     public WebElement productNameAtProductPage;
 
+    @FindBy(xpath = "(//div[@class='cart-bar'])[1]")
+    public WebElement accountLink;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement emailBox;
+
+    @FindBy(id = "password")
+    public WebElement passwordBox;
+
+    @FindBy(id = "submitlogin")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//span[text()='Logout']")
+    public WebElement logoutLink;
+
+
+
 }
