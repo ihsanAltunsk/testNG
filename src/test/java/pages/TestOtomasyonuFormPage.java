@@ -15,5 +15,15 @@ public class TestOtomasyonuFormPage {
     @FindBy(xpath = "//select[@class='form-control']")
     public List<WebElement> dropdownMenuElementsList;
 
-    
+    @FindBy(id = "gridCheck4")
+    public WebElement crampCheckBox;
+
+    @FindBy(id = "gridCheck5")
+    public WebElement backPainCheckBox;
+
+    @FindBy(id= "hastalikCheck2")
+    public WebElement diabetesCheckBox;
+
+    @FindBy(id= "hastalikCheck7")
+    public WebElement epilepsyCheckBox;
 }
