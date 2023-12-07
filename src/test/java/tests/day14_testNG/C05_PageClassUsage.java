@@ -3,7 +3,7 @@ package tests.day14_testNG;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.TestAutomationPage;
+import pages.TestOtomasyonuPage;
 import utilities.Driver;
 
 public class C05_PageClassUsage {
@@ -13,7 +13,7 @@ public class C05_PageClassUsage {
         Driver.getDriver().get("https://www.testotomasyonu.com");
 
         // Search for "phone"
-        TestAutomationPage testAutomationPage = new TestAutomationPage();
+        TestOtomasyonuPage testAutomationPage = new TestOtomasyonuPage();
         testAutomationPage.searchBox.sendKeys("phone" + Keys.ENTER);
 
         // Test that the number of search results is more than 1

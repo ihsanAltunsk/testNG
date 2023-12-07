@@ -7,8 +7,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class TestAutomationPage {
-    public TestAutomationPage(){
+public class TestOtomasyonuPage {
+    public TestOtomasyonuPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
