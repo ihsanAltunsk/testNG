@@ -1,11 +1,12 @@
 package tests.day15_configuration_Properties_Usage;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TestOtomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C03 {
+public class C03_PositiveLoginTest {
     // 1- Go to the homepage of https://www.testotomasyonu.com/.
     // 2- Click on the "account" link.
     // 3- Enter "wise@gmail.com" as the user email.
@@ -32,7 +33,7 @@ public class C03 {
         testOtomasyonuPage.loginButton.click();
 
         // 6- Test and confirm that login is successful.
-
+        Assert.assertTrue(testOtomasyonuPage.logoutLink.isDisplayed());
 
     }
 }
