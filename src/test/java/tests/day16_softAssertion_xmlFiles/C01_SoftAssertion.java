@@ -36,14 +36,15 @@ public class C01_SoftAssertion {
 
         // 2- Test that the Title contains "Test"
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(Driver.getDriver().getTitle().contains("Test"));
+        softAssert.assertTrue(Driver.getDriver().getTitle().contains("Test"), "Title doesn't contain \"Title\".");
 
         // 3- Test that the URL is https://www.testautomation.com
-        softAssert.assertEquals(Driver.getDriver().getCurrentUrl() , "https://www.testautomation.com");
+        softAssert.assertEquals(Driver.getDriver().getCurrentUrl() ,
+                "https://testotomasyonu.com/","URL is different than expected.");
 
         // 4- Test that the search box is in a usable state
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
-        softAssert.assertTrue(testOtomasyonuPage.searchBox.isEnabled());
+        softAssert.assertTrue(testOtomasyonuPage.searchBox.isEnabled(),"Search box is not usable.");
 
         // 5- Search for a specified keyword and test that a product is found
         testOtomasyonuPage.searchBox.sendKeys(
@@ -51,13 +52,13 @@ public class C01_SoftAssertion {
                         "toSearchWord") +
                         Keys.ENTER);
         int foundResultNumber = testOtomasyonuPage.foundProductsElementsList.size();
-        softAssert.assertTrue(foundResultNumber >0);
+        softAssert.assertTrue(foundResultNumber > 0 , "No product found when searching for a registered keyword.");
 
         // 6- Search for "Nutella" and test that no product is found
         testOtomasyonuPage.searchBox.clear();
         testOtomasyonuPage.searchBox.sendKeys("Nutella" + Keys.ENTER);
         foundResultNumber = testOtomasyonuPage.foundProductsElementsList.size();
-        softAssert.assertTrue(foundResultNumber>0);
+        softAssert.assertTrue(foundResultNumber == 0 , "Nutella found.");
 
         softAssert.assertAll();
         // 7- Close the page
