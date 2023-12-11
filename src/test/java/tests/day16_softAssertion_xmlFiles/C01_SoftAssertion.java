@@ -60,8 +60,8 @@ public class C01_SoftAssertion {
         foundResultNumber = testOtomasyonuPage.foundProductsElementsList.size();
         softAssert.assertTrue(foundResultNumber == 0 , "Nutella found.");
 
-        softAssert.assertAll();
         // 7- Close the page
+        softAssert.assertAll();
         Driver.quitDriver();
 
     }
