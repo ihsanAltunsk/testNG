@@ -32,7 +32,7 @@ public class C01_SoftAssertion {
     @Test
     public void test01(){
         // 1- Navigate to the homepage of the "testotomasyonu"
-        Driver.getDriver().get("https://testotomasyonu.com");
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
 
         // 2- Test that the Title contains "Test"
         SoftAssert softAssert = new SoftAssert();
@@ -40,7 +40,7 @@ public class C01_SoftAssertion {
 
         // 3- Test that the URL is https://www.testautomation.com
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl() ,
-                "https://testotomasyonu.com/","URL is different than expected.");
+                "https://www.testotomasyonu.com/","URL is different than expected.");
 
         // 4- Test that the search box is in a usable state
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
