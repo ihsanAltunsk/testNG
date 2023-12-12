@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Target methods">
+    <test name="methods">
+        <classes>
+            <class name="tests.day15_configuration_Properties_Usage.C04_NegativeLoginTest">
+           <!--
+                If all methods in a class are going to be executed,
+                there is no need to individually select each method.
+                However, if we specifically want to determine whether
+                they will run or not, method selection can be performed.
+            -->
+                <methods>
+                    <exclude name="bothInvalid"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
