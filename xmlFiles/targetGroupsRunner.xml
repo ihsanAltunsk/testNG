@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--
+    If you don't want to write the test methods individually
+    into an XML file, you can use the 'groups' feature in TestNG.
+
+    To run a group, we need two hierarchies:
+    1- Which group or groups will run or not run.
+    2- Where to look for the test methods that will run.
+-->
+<suite name="target groups">
+    <test name="target groups test">
+        <groups>
+            <run>
+                <include name="smoke"></include>
+                <exclude name="regression"></exclude>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+    </test>
+</suite>
