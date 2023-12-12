@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="target packages">
+    <test name="15th day package">
+        <packages>
+            <package name="tests.day15_configuration_Properties_Usage"></package>
+            <!--If you want to run all tests, simply use "*" as the package name.-->
+        </packages>
+    </test>
+</suite>

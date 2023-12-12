@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--
+    .xml files
+    Used for batch execution in TestNG.
+     1- The line we write at the beginning
+        should be present in all our .xml files.
+        This line will execute the test methods, classes, or packages prepared with TestNG
+        from the code we write in this .xml file.
+     2- To determine which methods/classes/packages will run,
+        we should write in our .xml file according to the test hierarchy.
+
+     3- Test hierarchy:
+        suite: contains one or more tests
+        test: a structure assembled for a purpose
+        consisting of test methods/classes/packages
+        that we can run in a single execution
+        Example: smoke test, E2E, regression
+        packages - classes - test methods are at the same level.
+-->
+<suite name="target classes">
+    <test name="Mix tests">
+        <classes>
+            <class name="tests.day14_testNG.C03_SearchTest"></class>
+            <class name="tests.day15_configuration_Properties_Usage.C01_WebuniversityTest"></class>
+            <class name="tests.day15_configuration_Properties_Usage.C06_HardAssertion"></class>
+        </classes>
+    </test>
+</suite>
