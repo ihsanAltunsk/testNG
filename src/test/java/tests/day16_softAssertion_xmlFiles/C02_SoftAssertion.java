@@ -94,7 +94,6 @@ public class C02_SoftAssertion {
         // 17- Close the page
         softAssert.assertAll();
         Driver.quitDriver();
-        so
 
     }
 }
